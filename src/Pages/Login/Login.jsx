@@ -154,8 +154,7 @@ const Login = () => {
                                 Furni<span className="text-[#1E99F5]">Flex</span>
                             </h1>
                             <p className="text-[18px] font-medium mt-4">
-                                Discover a seamless shopping experience with our curated collection of products.
-                                From fashion to electronics, we bring quality.
+                                Discover a seamless shopping experience with our curated collection of products. From fashion to electronics, we bring quality.
                             </p>
                         </div>
                     </div>
