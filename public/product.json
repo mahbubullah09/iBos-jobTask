@@ -1,0 +1,147 @@
+[
+    {
+      "category": "rocking chair",
+      "image": "https://i.ibb.co.com/GdZVPgv/1.png",
+      "name": "Recliner Chair Wood ",
+      "price": 299.00,
+      "previous_price": 350.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended."
+    },
+    {
+      "category": "rocking chair",
+      "image": "https://i.ibb.co.com/xMTb01N/2.png",
+      "name": "Timber Ride Padded ",
+      "price": 69.00,
+      "previous_price": 75.00,
+      "dt": "High Back Rocking Side Pocket Portable Folding Outdoor Camping Chairs "
+    },
+    {
+      "category": "rocking chair",
+      "image": "https://i.ibb.co.com/3hCnjTp/3.png",
+      "name": "Colored Wooden Chair ",
+      "price": 299.00,
+      "previous_price": 350.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "rocking chair",
+      "image": "https://i.ibb.co.com/9ncMb9B/4.png",
+      "name": "Blank Bamboo Wicker ",
+      "price": 299.00,
+      "previous_price": 350.00,
+      "dt": "Lightweight, easy to clean, sturdy, safe and stable. Non-slip legs"
+    },
+    {
+      "category": "rocking chair",
+      "image": "https://i.ibb.co.com/xYVQHQ8/5.png",
+      "name": "Isolated Wooden Rock ",
+      "price": 165.00,
+      "previous_price": 400.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "rocking chair",
+      "image": "https://i.ibb.co.com/2nf4wwQ/6.png",
+      "name": "Minimal Empty Rocking ",
+      "price": 299.00,
+      "previous_price": 350.00,
+      "dt": "A seat, especially for one person, usually having four legs for support"
+    },
+    {
+      "category": "side chair",
+      "image": "https://i.ibb.co.com/Dp2mXZM/2-1.jpg",
+      "name": "Elegant Dining ",
+      "price": 105.00,
+      "previous_price": 150.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "side chair",
+      "image": "https://i.ibb.co.com/QpM4Ym2/2-2.jpg",
+      "name": "Wooden Armless ",
+      "price": 140.00,
+      "previous_price": 200.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "side chair",
+      "image": "https://i.ibb.co.com/Hrg4HfH/2-3.jpg",
+      "name": "Mid-Century Modern ",
+      "price": 175.00,
+      "previous_price": 250.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "side chair",
+      "image": "https://i.ibb.co.com/p4VSbxR/2-4.jpg",
+      "name": "Industrial Metal ",
+      "price": 91.00,
+      "previous_price": 130.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "side chair",
+      "image": "https://i.ibb.co.com/whL1LGX/2-5.jpg",
+      "name": "Cushioned Velvet ",
+      "price": 175.00,
+      "previous_price": 250.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "side chair",
+      "image": "https://i.ibb.co.com/zFt7cf4/2-6.jpg",
+      "name": "Classic Wooden ",
+      "price": 98.00,
+      "previous_price": 140.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "lounge chair",
+      "image": "https://i.ibb.co.com/7WdnHzz/3-1.jpg",
+      "name": "Leather Reclining ",
+      "price": 385.00,
+      "previous_price": 550.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "lounge chair",
+      "image": "https://i.ibb.co.com/6D8vq1X/3-2.jpg",
+      "name": "Modern Fabric ",
+      "price": 315.00,
+      "previous_price": 450.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "lounge chair",
+      "image": "https://i.ibb.co.com/7vZNmZJ/3-3.jpg",
+      "name": "Adjustable ",
+      "price": 245.00,
+      "previous_price": 350.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "lounge chair",
+      "image": "https://i.ibb.co.com/XsYpzjj/3-4.jpg",
+      "name": "Ergonomic Mesh ",
+      "price": 175.00,
+      "previous_price": 250.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "lounge chair",
+      "image": "https://i.ibb.co.com/MZh3RyG/3-5.jpg",
+      "name": "Outdoor Patio ",
+      "price": 245.00,
+      "previous_price": 350.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    },
+    {
+      "category": "lounge chair",
+      "image": "https://i.ibb.co.com/3Bs9P1q/3-6.jpg",
+      "name": "Luxury Cushioned ",
+      "price": 280.00,
+      "previous_price": 400.00,
+      "dt": "It has a backrest that can be tilted back, and often a footrest extended"
+    }
+  ]
+  

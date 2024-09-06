@@ -24,7 +24,7 @@ function Navbar() {
 
     };
 
-    const {user, logout} = useContext(AuthContext)
+    const { user, logout } = useContext(AuthContext)
 
     console.log(user);
 
@@ -35,8 +35,8 @@ function Navbar() {
                 <div className="flex items-center">
                     <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
                     <h1 className="text-center text-[20px] font-bold">
-                                Furni<span className="text-[#1E99F5]">Flex</span>
-                            </h1>
+                        Furni<span className="text-[#1E99F5]">Flex</span>
+                    </h1>
                 </div>
 
                 {/* Links Section (Hidden on mobile) */}
@@ -80,23 +80,25 @@ function Navbar() {
                         {/* Dropdown for user profile */}
                         {isProfileOpen && (
                             user ?
-                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
-                                <div className="px-4 py-2">
-                                    <p className="font-semibold">{user?.firstName}</p>
-                                    <p className="text-sm text-gray-500">{user?.email}</p>
+                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
+                                    <div className="px-4 py-2">
+                                        <p className="font-semibold">{user?.firstName}</p>
+                                        <p className="text-sm text-gray-500">{user?.email}</p>
+                                    </div>
+                                    <div className="border-t border-gray-200"></div>
+                                    <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        Logout
+                                    </button>
                                 </div>
-                                <div className="border-t border-gray-200"></div>
-                                <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    Logout
-                                </button>
-                            </div>
-                            :
-                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
-                               
-                                <button  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                    Login
-                                </button>
-                            </div>
+                                :
+                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
+
+                                   <Link to={'/login'}>
+                                   <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        Login
+                                    </button>
+                                   </Link>
+                                </div>
                         )}
                     </div>
                 </div>

@@ -8,8 +8,9 @@ const ProductProvider = ({ children }) => {
 
     const [product, setProduct] = useState('')
 
+ 
     useEffect(()=>{
-        fetch('../')
+        fetch('product.json')
         .then(res => res.json())
         .then(data=> setProduct(data))
     },[])
