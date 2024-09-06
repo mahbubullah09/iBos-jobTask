@@ -3,7 +3,7 @@ import { PiHandbagSimpleBold } from 'react-icons/pi';
 
 const ProductCard = ({ product }) => {
     return (
-        <div className="bg-white max-w-[280px] mx-auto p-4 border rounded-lg hover:shadow-lg transition-shadow duration-300"
+        <div className="bg-white max-w-[280px] mx-auto p-4 border border-[#F1F1F1] rounded-lg hover:shadow-lg transition-shadow duration-300"
         >
             <img
                 src={product?.image}

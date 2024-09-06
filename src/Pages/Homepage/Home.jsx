@@ -17,14 +17,14 @@ const Home = () => {
     : [];
 
     return (
-        <div className="min-h-screen flex flex-col lg:flex-row">
+        <div className="min-h-screen flex flex-col lg:flex-row my-12">
             {/* Sidebar */}
             <div className="lg:w-1/5 w-full bg-white p-4 border-r shadow-lg lg:shadow-none">
-                <h2 className="text-lg font-bold mb-4">Categories</h2>
+               
                 <ul className="space-y-2">
                     <li>
                         <button
-                            className={`w-full text-left py-2 px-4 ${selectedCategory === 'rocking chair' ? 'bg-gray-200' : ''
+                            className={`w-full text-left py-2 px-4 ${selectedCategory === 'rocking chair' ? 'bg-[#0E0E0E] text-[18px] font-medium rounded-lg text-white' : 'text-[18px] font-medium text-[#717171]'
                                 }`}
                             onClick={() => setSelectedCategory('rocking chair')}
                         >
@@ -33,7 +33,7 @@ const Home = () => {
                     </li>
                     <li>
                         <button
-                            className={`w-full text-left py-2 px-4 ${selectedCategory === 'side chair' ? 'bg-gray-200' : ''
+                            className={`w-full text-left py-2 px-4 ${selectedCategory === 'side chair' ? 'bg-[#0E0E0E] text-[18px] font-medium rounded-lg text-white' : 'text-[18px] font-medium text-[#717171]'
                                 }`}
                             onClick={() => setSelectedCategory('side chair')}
                         >
@@ -42,7 +42,7 @@ const Home = () => {
                     </li>
                     <li>
                         <button
-                            className={`w-full text-left py-2 px-4 ${selectedCategory === 'lounge chair' ? 'bg-gray-200' : ''
+                            className={`w-full text-left py-2 px-4 ${selectedCategory === 'lounge chair' ? 'bg-[#0E0E0E] text-[18px] font-medium rounded-lg text-white' : 'text-[18px] font-medium text-[#717171]'
                                 }`}
                             onClick={() => setSelectedCategory('lounge chair')}
                         >
@@ -54,9 +54,7 @@ const Home = () => {
 
             {/* Product Grid */}
             <div className="lg:w-4/5 w-full p-4">
-                <h2 className="text-xl font-bold mb-4 capitalize">
-                    {selectedCategory.replace('-', ' ')}
-                </h2>
+               
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {filteredProducts.map((product, index) => <ProductCard key={index} product={product}/> ) }
