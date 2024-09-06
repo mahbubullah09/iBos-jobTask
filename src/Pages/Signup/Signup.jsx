@@ -1,14 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa6";
-import bg from "../../assets/authBg.png"; 
+import bg from "../../assets/authBg.png";
 import icon from "../../assets/icon.png"
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../ContexApi/AuthProvider";
+
+
 const Signup = () => {
     const [show, setShow] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstname, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+
+    const { signup } = useContext(AuthContext)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // handle form submission logic
+        const result = signup(email, password, firstname, lastName);
+    
+        if (result.success) {
+            alert(result.message); 
+        } else {
+            alert(result.message); 
+        }
     };
 
     return (
@@ -35,6 +51,7 @@ const Signup = () => {
                                     <div className="flex flex-col md:flex-row gap-4">
                                         <div className="relative w-full">
                                             <input
+                                                onChange={(e) => setFirstName(e.target.value)}
                                                 type="text"
                                                 className="pt-5 px-4 py-1 text-[14px] text-black border rounded-md focus:ring focus:outline-none focus:border-blue-200 w-full"
                                             />
@@ -44,6 +61,7 @@ const Signup = () => {
                                         </div>
                                         <div className="relative w-full">
                                             <input
+                                                onChange={(e) => setLastName(e.target.value)}
                                                 type="text"
                                                 className="pt-5 px-4 py-1 text-[14px] text-black border rounded-md focus:ring focus:outline-none focus:border-blue-200 w-full"
                                             />
@@ -56,7 +74,9 @@ const Signup = () => {
                                     {/* Email Address */}
                                     <div className="relative">
                                         <input
-                                            type="text"
+                                            required
+                                            type="email"
+                                            onChange={(e) => setEmail(e.target.value)}
                                             className="pt-5 px-4 py-1 text-[14px] text-black border rounded-md focus:ring focus:outline-none focus:border-blue-200 w-full"
                                         />
                                         <label className="absolute top-1 left-4 text-[12px] text-[#707070]">
@@ -67,7 +87,9 @@ const Signup = () => {
                                     {/* Password */}
                                     <div className="relative">
                                         <input
+                                            required
                                             type={show ? "text" : "password"}
+                                            onChange={(e) => setPassword(e.target.value)}
                                             className="pt-5 px-4 py-1 text-[14px] text-black border rounded-md focus:ring focus:outline-none focus:border-blue-200 w-full"
                                         />
                                         <label className="absolute top-1 left-4 text-[12px] text-[#707070]">
@@ -83,7 +105,7 @@ const Signup = () => {
 
                                     {/* Terms & Conditions */}
                                     <div className="mb-4 flex items-center font-semibold">
-                                        <input type="checkbox" id="terms" className="mr-2 cursor-pointer" />
+                                        <input required type="checkbox" id="terms" className="mr-2 cursor-pointer" />
                                         <label htmlFor="terms" className="text-sm text-black cursor-pointer">
                                             I agree to the{" "}
                                             <span className="underline">Terms & Policy</span>
@@ -131,11 +153,11 @@ const Signup = () => {
 
                                 </button>
 
-                               
+
                             </div>
                             <p className="text-center text-[14px] font-medium my-6">Have an account? Sign In</p>
 
-                            
+
 
                         </div>
                     </div>
