@@ -1,23 +1,29 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';  // Ensure you're importing the uuidv4 function
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (product) => {
-    setCart([...cart, product]);
 
-    // Return success message
+  const addToCart = (product) => {
+ 
+    const productWithCartId = {
+      ...product,
+      cartId: uuidv4(),  
+    };
+
+    setCart([...cart, productWithCartId]);
+
     return { type: 'success', message: 'Product added to cart successfully!' };
   };
 
-  const removeFromCart = (productId) => {
-    // Remove the product from the cart
-    const updatedCart = cart.filter(item => item.id !== productId);
+  const removeFromCart = (cartId) => {
+    const updatedCart = cart.filter(item => item.cartId !== cartId);
     setCart(updatedCart);
 
-    // Return success or error message
+   
     if (updatedCart.length < cart.length) {
       return { type: 'success', message: 'Product removed from cart successfully!' };
     } else {
@@ -32,4 +38,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-export default CartProvider
+export default CartProvider;

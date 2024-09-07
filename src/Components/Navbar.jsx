@@ -7,27 +7,28 @@ import { useContext, useState } from 'react';
 import { ImCross } from "react-icons/im";
 import { IoMdCloseCircle } from "react-icons/io";
 import { AuthContext } from '../ContexApi/AuthProvider';
+import { CartContext } from '../ContexApi/CartProvider';
 function Navbar() {
-    // State to manage mobile menu visibility
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // State to manage profile dropdown visibility
+
     const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-    // Toggle function to open/close the mobile menu
+    // Toggle to open/close the mobile menu
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Toggle function to open/close the profile dropdown
+    // Toggle  to open/close the profile dropdown
     const toggleProfile = () => {
         setIsProfileOpen(!isProfileOpen);
 
     };
-
+    // call auth context 
     const { user, logout } = useContext(AuthContext)
 
-    console.log(user);
-
+    const {cart}  = useContext(CartContext)
+    // console.log(cart);
     return (
         <nav className="bg-white shadow-md">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -63,7 +64,7 @@ function Navbar() {
                             </p>
                             {/* Absolute positioning should be relative to this div */}
                             <p className='absolute top-0 right-0'>
-                                <span className='text-[10px] rounded-full px-[6px] py-[3px] bg-[#323232] text-white'>0</span>
+                                <span className='text-[10px] rounded-full px-[6px] py-[3px] bg-[#323232] text-white'>{cart?.length}</span>
                             </p>
                         </div>
                     </button>
@@ -93,18 +94,18 @@ function Navbar() {
                                 :
                                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
 
-                                   <Link to={'/login'}>
-                                   <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                        Login
-                                    </button>
-                                   </Link>
+                                    <Link to={'/login'}>
+                                        <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                            Login
+                                        </button>
+                                    </Link>
                                 </div>
                         )}
                     </div>
                 </div>
             </div>
 
-            {/* Mobile Menu - Toggle visibility based on `isMenuOpen` state */}
+           {/* mobile view  */}
             {isMenuOpen && (
                 <div className="md:hidden bg-white">
                     <div className="flex flex-col space-y-4 text-gray-600 p-4">
