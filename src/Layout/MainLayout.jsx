@@ -2,6 +2,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import { Toaster } from 'react-hot-toast';
 
 const MainLayout = () => {
 
@@ -15,6 +16,7 @@ const MainLayout = () => {
         <Outlet/>
         </div>
         {!hideNavbarAndFooter &&   <Footer/>}
+        <Toaster/>
      </div>
     );
 };

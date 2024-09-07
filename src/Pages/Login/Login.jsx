@@ -5,6 +5,7 @@ import icon from "../../assets/icon.png"
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ContexApi/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -17,13 +18,13 @@ const Login = () => {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-        const result = login(email, password);
+        const result = login(email.toLowerCase(), password);
 
         if (result.success) {
-            alert(result.message);
+            toast.success(result.message);
             navigate('/');
         } else {
-            alert(result.message);
+            toast.error(result.message);
         }
     };
 
@@ -54,7 +55,7 @@ const Login = () => {
                                             required
                                             type="email"
                                             onChange={(e) => setEmail(e.target.value)}
-                                            className="pt-5 px-4 py-1 text-[14px] text-black border rounded-md focus:ring focus:outline-none focus:border-blue-200 w-full"
+                                            className="lowercase pt-5 px-4 py-1 text-[14px] text-black border rounded-md focus:ring focus:outline-none focus:border-blue-200 w-full"
                                         />
                                         <label className="absolute top-1 left-4 text-[12px] text-[#707070]">
                                             Email address
@@ -98,7 +99,7 @@ const Login = () => {
                                         type="submit"
                                         className="w-full bg-black text-white py-2 rounded-lg font-semibold"
                                     >
-                                        Sign in
+                                        Sign In
                                     </button>
                                 </div>
                             </form>
@@ -153,7 +154,7 @@ const Login = () => {
                             <h1 className="text-center text-[40px] font-bold">
                                 Furni<span className="text-[#1E99F5]">Flex</span>
                             </h1>
-                            <p className="text-[18px] font-medium mt-4">
+                            <p className="text-[16px] text-[#C8C4C4] font-medium mt-4">
                                 Discover a seamless shopping experience with our curated collection of products. From fashion to electronics, we bring quality.
                             </p>
                         </div>

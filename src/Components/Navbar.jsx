@@ -27,47 +27,50 @@ function Navbar() {
     // call auth context 
     const { user, logout } = useContext(AuthContext)
 
-    const {cart}  = useContext(CartContext)
+    const { cart } = useContext(CartContext)
     // console.log(cart);
     return (
         <nav className="bg-white shadow-md">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                 {/* Logo Section */}
-                <div className="flex items-center">
+             <Link to={'/'}>
+             <div className="flex items-center">
                     <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
                     <h1 className="text-center text-[20px] font-bold">
                         Furni<span className="text-[#1E99F5]">Flex</span>
                     </h1>
                 </div>
+             </Link>
 
-                {/* Links Section (Hidden on mobile) */}
-                <div className="hidden md:flex space-x-8 text-gray-600">
-                    <Link to="/" className="hover:text-blue-600">Home</Link>
-                    <Link to="/products" className="hover:text-blue-600">Products</Link>
-                    <Link to="/categories" className="hover:text-blue-600">Categories</Link>
-                    <Link to="/custom" className="hover:text-blue-600">Custom</Link>
-                    <Link to="/blog" className="hover:text-blue-600">Blog</Link>
+                {/* navLink for large device */}
+                <div className="hidden md:flex space-x-8 text-[#202020] text-[18px] font-medium">
+                    <Link to="/" className="hover:text-[#0a0a0a]">Home</Link>
+                    <Link to="/products" className="hover:text-[#0a0a0a]">Products</Link>
+                    <Link to="/categories" className="hover:text-[#0a0a0a]">Categories</Link>
+                    <Link to="/custom" className="hover:text-[#0a0a0a]">Custom</Link>
+                    <Link to="/blog" className="hover:text-[#0a0a0a]">Blog</Link>
                 </div>
 
                 {/* Icons Section */}
                 <div className="flex  items-center space-x-4  text-2xl">
                     {/* Hamburger icon for mobile */}
-                    <button className="text-gray-600 md:hidden" onClick={toggleMenu}>
+                    <button className="text-[#202020] text-[18px] fonme md:hidden" onClick={toggleMenu}>
                         {
                             !isMenuOpen ? <MdMenu /> : <ImCross />
                         }
                     </button>
-                    <button>
-                        <div className='relative'>
-                            <p>
-                                <PiHandbagSimpleBold />
-                            </p>
-                            {/* Absolute positioning should be relative to this div */}
-                            <p className='absolute top-0 right-0'>
-                                <span className='text-[10px] rounded-full px-[6px] py-[3px] bg-[#323232] text-white'>{cart?.length}</span>
-                            </p>
-                        </div>
-                    </button>
+                    <Link to={'/cart'}>
+                        <button>
+                            <div className='relative'>
+                                <p>
+                                    <PiHandbagSimpleBold />
+                                </p>
+                                {/* Absolute positioning should be relative to this div */}
+                                <p className='absolute top-0 right-0'>
+                                    <span className='text-[10px] rounded-full px-[6px] py-[2.5px] bg-[#323232] text-white'>{cart?.length}</span>
+                                </p>
+                            </div>
+                        </button></Link>
 
 
                     {/* Profile Icon */}
@@ -86,8 +89,8 @@ function Navbar() {
                                         <p className="font-semibold">{user?.firstName}</p>
                                         <p className="text-sm text-gray-500">{user?.email}</p>
                                     </div>
-                                    <div className="border-t border-gray-200"></div>
-                                    <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                    <div className="border-t  border-gray-200"></div>
+                                    <button onClick={logout} className="block font-bold w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                         Logout
                                     </button>
                                 </div>
@@ -95,7 +98,7 @@ function Navbar() {
                                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2">
 
                                     <Link to={'/login'}>
-                                        <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        <button className="block font-bold w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                             Login
                                         </button>
                                     </Link>
@@ -105,10 +108,10 @@ function Navbar() {
                 </div>
             </div>
 
-           {/* mobile view  */}
+            {/* mobile view  */}
             {isMenuOpen && (
                 <div className="md:hidden bg-white">
-                    <div className="flex flex-col space-y-4 text-gray-600 p-4">
+                    <div className="flex flex-col space-y-4 text-[#202020] text-[18px] font-medium p-4">
                         <Link to="/" className="hover:text-blue-600">Home</Link>
                         <Link to="/products" className="hover:text-blue-600">Products</Link>
                         <Link to="/categories" className="hover:text-blue-600">Categories</Link>

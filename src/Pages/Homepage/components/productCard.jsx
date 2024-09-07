@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { PiHandbagSimpleBold } from 'react-icons/pi';
 import { CartContext } from '../../../ContexApi/CartProvider';
 import { AuthContext } from '../../../ContexApi/AuthProvider';
+import toast from 'react-hot-toast';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
@@ -10,7 +11,11 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     const result = addToCart(product, user?.email);
-    alert(result.message); // Log the result to see if adding to cart was successful
+    if (result.success) {
+      toast.success(result.message);
+  } else {
+      toast.error(result.message);
+  }
   };
 
   return (
@@ -18,7 +23,7 @@ const ProductCard = ({ product }) => {
       <img
         src={product?.image}
         alt={product?.name}
-        className="w-full h-40 mb-4 rounded"
+        className="w-full h-[236px]  bg-[#F2F2F2] mx-auto   mb-4 rounded"
       />
       <h3 className="text-[18px] font-semibold text-[#343434]">{product?.name}</h3>
       <p className="text-[#838383] text-[14px] font-normal mb-2">{product?.dt}</p>

@@ -10,13 +10,15 @@ import Login from './Pages/Login/Login.jsx';
 import ProductProvider from './ContexApi/ProductProvider.jsx';
 import CartProvider from './ContexApi/CartProvider.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
+import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout/>,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

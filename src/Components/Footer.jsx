@@ -7,11 +7,11 @@ import logo from "../assets/icon.png"
 const Footer = () => {
     return (
         <footer className="bg-[#0E0E0E] text-[#81859F] p-8">
-            <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-2  lg:grid-cols-4 gap-8">
 
             <div className="flex ">
                     <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
-                    <h1 className=" text-[20px] font-bold">
+                    <h1 className=" text-[20px] text-white font-bold">
                         Furni<span className="text-[#1E99F5]">Flex</span>
                     </h1>
                 </div>

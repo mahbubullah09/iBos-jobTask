@@ -5,19 +5,19 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 const Cart = () => {
     const { cart, removeFromCart } = useContext(CartContext);
 
-    console.log(cart);
+
 
     const getTotalPrice = () => {
         return cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
     };
 
     return (
-        <div className="flex flex-col md:flex-row justify-between gap-10 w-full p-4 my-4">
+        <div className="flex flex-col md:flex-row justify-between gap-10 w-full p-4 my-4 min-h-screen">
 
             <div className="w-full md:w-2/3  rounded-lg md:mb-0">
                 <h2 className="text-[28px] font-semibold mb-8">An overview of your order</h2>
                 {cart.length === 0 ? (
-                    <p>Your cart is empty</p>
+                    <p className='text-2xl font-semibold bg-black text-white px-2 py-4 text-center rounded-lg'>Your cart is empty</p>
                 ) : (
                     <ul className='bg-[#FAFAFA] p-4'>
                         {cart.map((item) => (
@@ -47,7 +47,7 @@ const Cart = () => {
             </div>
 
             {/* Order Details */}
-            <div className="w-full md:w-1/3   ">
+            <div className="w-full md:w-[380px]   ">
                 <h2 className="text-[28px] font-semibold mb-8">Order Details</h2>
                 <div className='bg-[#FAFAFA] text-[#656565] p-4'>
                     <div className="mb-4 ">
@@ -69,8 +69,8 @@ const Cart = () => {
                         <p className='text-[#0E0E0E]'>€{getTotalPrice()}</p>
                     </div>
                 </div>
-                <button className="w-full bg-black text-[#FFFFFF] text-[17px] font-medium  p-4 mt-4 rounded-lg ">
-                    Go to Checkout
+                <button className="w-full  font-barlow bg-black text-[#FFFFFF] text-[17px] font-medium  p-4 mt-4 rounded-lg ">
+                GO TO CHECKOUT
                 </button>
             </div>
         </div>

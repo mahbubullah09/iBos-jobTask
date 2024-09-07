@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     if (!user) {
-      return { type: 'error', message: 'User not authenticated!' };
+      return { success: false, message: 'Please Login before add to cart!' };
     }
 
     const productWithCartId = {
@@ -37,29 +37,29 @@ export const CartProvider = ({ children }) => {
     const productExists = cart.some(item => item.cartId === productWithCartId.cartId);
 
     if (productExists) {
-      return { type: 'error', message: 'Product already in cart!' };
+      return { success: false, message: 'Product already in cart!' };
     }
 
     const updatedCart = [...cart, productWithCartId];
     setCart(updatedCart);
 
-    return { type: 'success', message: 'Product added to cart successfully!' };
+    return { success: true, message: 'Product added to cart successfully!' };
   };
 
   const removeFromCart = (cartId) => {
     if (!user) {
-      return { type: 'error', message: 'User not authenticated!' };
+      return { success: false, message: 'User not authenticated!' };
     }
 
     const updatedCart = cart.filter(item => item.cartId !== cartId);
 
     if (updatedCart.length === cart.length) {
-      return { type: 'error', message: 'Product not found in cart!' };
+      return { success: false, message: 'Product not found in cart!' };
     }
 
     setCart(updatedCart);
 
-    return { type: 'success', message: 'Product removed from cart successfully!' };
+    return { success: true, message: 'Product removed from cart successfully!' };
   };
 
   // only current user can acces his/her items
