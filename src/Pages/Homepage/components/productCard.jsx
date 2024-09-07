@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { PiHandbagSimpleBold } from 'react-icons/pi';
 import { CartContext } from '../../../ContexApi/CartProvider';
+import { AuthContext } from '../../../ContexApi/AuthProvider';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
+  const {user} =useContext(AuthContext)
+
   const handleAddToCart = () => {
-    const result = addToCart(product);
+    const result = addToCart(product, user?.email);
     alert(result.message); // Log the result to see if adding to cart was successful
   };
 

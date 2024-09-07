@@ -9,6 +9,7 @@ import AuthProvider from './ContexApi/AuthProvider.jsx';
 import Login from './Pages/Login/Login.jsx';
 import ProductProvider from './ContexApi/ProductProvider.jsx';
 import CartProvider from './ContexApi/CartProvider.jsx';
+import Cart from './Pages/Cart/Cart.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
