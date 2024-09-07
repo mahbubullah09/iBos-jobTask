@@ -11,7 +11,7 @@ This is simple dynamic website using React, Tailwind CSS and Context API.
 - The website land on the home page.
 - Without login user can't add to cart any products.
 - login route can access by clicking the avatar.
-- All data store in localsorage and I access these using Context API
+- All user's data and cart's data store in localsorage and I access these using Context API
 
 ## Live Link
 
