@@ -1,7 +1,7 @@
 
 # iBos Job Task
 
-This is simple dynamic website using Teact, Tailwind CSS and Context API. 
+This is simple dynamic website using React, Tailwind CSS and Context API. 
 
 
 ## Pages
