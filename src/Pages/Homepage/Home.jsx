@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ProductContext } from "../../ContexApi/ProductProvider";
 import ProductCard from "./components/productCard";
+import { CartContext } from "../../ContexApi/CartProvider";
 
 
 const Home = () => {
@@ -8,13 +9,17 @@ const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState('rocking chair');
 
     const { product } = useContext(ProductContext)
-    console.log(product);
+
 
     const filteredProducts = Array.isArray(product)
     ? product.filter(
         (product) => product.category === selectedCategory
     )
     : [];
+
+    const {cart} = useContext(CartContext)
+
+    console.log(cart);
 
     return (
         <div className="min-h-screen flex flex-col lg:flex-row my-12">

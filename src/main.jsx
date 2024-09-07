@@ -8,6 +8,7 @@ import Signup from './Pages/Signup/Signup.jsx';
 import AuthProvider from './ContexApi/AuthProvider.jsx';
 import Login from './Pages/Login/Login.jsx';
 import ProductProvider from './ContexApi/ProductProvider.jsx';
+import CartProvider from './ContexApi/CartProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
    <ProductProvider>
-   <RouterProvider router={router} />
+  <CartProvider>
+  <RouterProvider router={router} />
+  </CartProvider>
    </ProductProvider>
     </AuthProvider>
   </StrictMode>,
