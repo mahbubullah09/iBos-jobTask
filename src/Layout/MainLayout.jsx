@@ -8,10 +8,12 @@ const MainLayout = () => {
     const location = useLocation();
     const hideNavbarAndFooter = ['/signup', '/login'].includes(location.pathname);
     return (
-        <div>
+        <div >
       
         {!hideNavbarAndFooter && <Navbar/>}
+        <div className='max-w-6xl mx-auto'>
         <Outlet/>
+        </div>
         {!hideNavbarAndFooter &&   <Footer/>}
      </div>
     );
